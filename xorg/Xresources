@@ -1,0 +1,25 @@
+! Cursor theme
+Xcursor*theme:              Vanilla-DMZ
+
+! URxvt settings
+URxvt*termName:             rxvt-16color
+URxvt.scrollBar:            off
+! URxvt.font:                 xft:bitstream vera sans mono:size=9
+! URxvt.boldFont:             xft:bitstream vera sans mono:size=9
+URxvt.font:                 xft:meslo lg s:size=9
+URxvt.boldFont:             xft:meslo lg s:size=9
+URxvt.internalBorder:       1
+URxvt*selectToClipboard:    true
+URxvt*saveLines:            10000
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
+! Font settings
+Xft.antialias:              1
+Xft.hinting:                1
+Xft.autohint:               0
+Xft.hintstyle:              hintfull
+Xft.rgba:                   rgb
+Xft.lcdfilter:              lcddefault
+
+#include "/home/menski/.Xresources.color.dark"

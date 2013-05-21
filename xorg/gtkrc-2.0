@@ -1,0 +1,8 @@
+include '/usr/share/themes/Zukitwo/gtk-2.0/gtkrc'
+
+gtk-toolbar-style   = GTK_TOOLBAR_ICONS
+
+style "gvimfix" {
+  bg[NORMAL] = "#232323" # this matches my gvim theme 'Normal' bg color.
+}
+widget "vim-main-window.*GtkForm" style "gvimfix"

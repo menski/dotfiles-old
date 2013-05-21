@@ -1,0 +1,71 @@
+set nocompatible
+
+" Initialize Pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+" Enable syntax highlighting
+syntax on
+filetype plugin indent on
+
+" Colorscheme
+colorscheme solarized
+
+" Gui options
+set guioptions=aeg
+
+" Add line numbers
+set number
+set ruler
+
+" Set encoding
+set encoding=utf-8
+
+" Set statusline
+set laststatus=2
+set statusline=%<%n:%f\ %y[%{&ff}]%r%m%=%-19(%3l,%02c%03V%)%7(%P%)\ [%LL]\ [%<%1.20{getcwd()}]
+
+" Whitespace stuff
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+" Search related settings
+set incsearch
+set hlsearch
+
+" Show trailing spaces and highlight hard tabs
+set list listchars=tab:»·,trail:·
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Set spell languages
+set spelllang=de,en
+
+" Map Ctrl+l to clear highlighted searches
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" Disable code folding
+set nofoldenable
+
+" Directories for swp files
+set backupdir=~/.local/share/vim
+set directory=~/.local/share/vim
+
+" Strip trailing whitespaces on each save
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" make uses real tabs
+au FileType make set noexpandtab
+
+" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79 colorcolumn=80

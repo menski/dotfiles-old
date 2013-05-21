@@ -1,0 +1,21 @@
+[user]
+	name = Sebastian Menski
+	email = sebastian.menski@googlemail.com
+[core]
+	editor = vim
+	excludesfile = /home/menski/.cvsignore
+	autocrlf = input
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	hist = log --graph --date=short --pretty=format:\"%C(yellow)[%h]%Creset (%ad by %an) %Cgreen%d %Creset%s\" --branches=*
+	unstage = reset HEAD
+	fshow = ! sh -c 'git show --pretty="format:" --name-only $1 | grep -v "^$" | uniq | sed -e "s#^#`git rev-parse --show-toplevel`/#"' -
+	edit  = ! sh -c '$EDITOR `git fshow $1`' -
+[github]
+	user = menski
+[push]
+	default = simple
