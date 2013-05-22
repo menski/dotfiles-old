@@ -22,4 +22,4 @@ Xft.hintstyle:              hintfull
 Xft.rgba:                   rgb
 Xft.lcdfilter:              lcddefault
 
-#include "/home/menski/.Xresources.color.dark"
+#include "/home/menski/.Xresources.color.self"
