@@ -112,12 +112,19 @@ function _prompt_symbol {
     echo -e "\$${_RESET}"
 }
 
+function _prompt_virtualenv {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        echo -e "${_WHITE}(${_B_GREEN}$(basename $VIRTUAL_ENV)${_WHITE})${_RESET}"
+    fi
+}
+
 function _set_prompt {
     PS1="$(_prompt_error)"
     PS1+="$(_prompt_user)"
     PS1+="$(_prompt_dir) "
     PS1+="$(_prompt_git)"
     PS1+="$(_prompt_symbol) "
+    RPROMPT="$(_prompt_virtualenv)"
 }
 
 function precmd {
