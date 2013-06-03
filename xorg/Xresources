@@ -22,4 +22,42 @@ Xft.hintstyle:              hintfull
 Xft.rgba:                   rgb
 Xft.lcdfilter:              lcddefault
 
-#include "/home/menski/.Xresources.color.self"
+!#include "/home/menski/.Xresources.color.dark"
+
+URxvt*background:           #1A1A1A
+URxvt*foreground:           #A9A9A9
+URxvt*fading:               20
+
+! Dark & Light
+
+! Black
+URxvt*color0:               #1A1A1A
+URxvt*color8:               #333333
+
+! Red
+URxvt*color1:               #8B2500
+URxvt*color9:               #CD3700
+
+! Green
+URxvt*color2:               #6E8B3D
+URxvt*color10:              #A2CD5A
+
+! Yellow
+URxvt*color3:               #CD9B1D
+URxvt*color11:              #EEB422
+
+! Blue
+URxvt*color4:               #36648B
+URxvt*color12:              #4F94CD
+
+! Magenta
+URxvt*color5:               #8B2252
+URxvt*color13:              #CD3278
+
+! Cyan
+URxvt*color6:               #668B8B
+URxvt*color14:              #96CDCD
+
+! White
+URxvt*color7:               #A9A9A9
+URxvt*color15:              #D3D3D3
