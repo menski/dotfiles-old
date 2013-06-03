@@ -28,8 +28,9 @@ function _prompt_error {
 }
 
 function _prompt_user {
-    if [ $USER != "$(logname 2> /dev/null)" ]; then
-        echo -e "${_WHITE}%n${_CYAN}@${_RESET}"
+    if [[ $USER != "$(logname 2> /dev/null)" || \
+         -n "$SSH_CONNECTION" ]]; then
+        echo -e "${_WHITE}%n@%m${_CYAN}:${_RESET}"
     fi
 }
 
