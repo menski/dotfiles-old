@@ -1,3 +1,7 @@
 export PATH="$HOME/.local/bin:$PATH"
+eval $(keychain --nogui -Q --quiet id_rsa)
+[ -z "$HOSTNAME" ] && HOSTNAME=$(uname -n)
+[ -f $HOME/.keychain/${HOSTNAME}-sh ] && source $HOME/.keychain/${HOSTNAME}-sh
+[ -f $HOME/.keychain/${HOSTNAME}-sh-gpg ] && source $HOME/.keychain/${HOSTNAME}-sh-gpg
 
-[[ $TTY = "/dev/tty1" ]] && exec startx 
+[[ $TTY = "/dev/tty1" ]] && exec startx
