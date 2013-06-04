@@ -61,7 +61,9 @@ set nofoldenable
 " Directories for swp files
 set backupdir=~/.local/share/vim/backup/
 set directory=~/.local/share/vim/swap/
-set undodir=~/.local/share/vim/undo
+if has("undodir")
+  set undodir=~/.local/share/vim/undo
+endif
 
 " Split settings
 nnoremap <C-J> <C-W><C-J>
