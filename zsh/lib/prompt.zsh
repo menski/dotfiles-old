@@ -38,13 +38,15 @@ function _prompt_dir {
     local maxlen=25
     local trunc_sym=""
     local dir=${PWD/#$HOME/\~}
-    while [ ${#dir} -gt $maxlen ]; do
+    if [ ${#dir} -gt $maxlen ]; then
        trunc_sym="../"
+    fi
+    while [ ${#dir} -gt $maxlen ]; do
        index=$(expr index "$dir" /)
        if [ $index -eq 0 ]; then
            break
        fi
-       dir=${dir:$index}
+       dir=$dir[$index+1,-1]
     done
     echo -e "${_WHITE}$trunc_sym$dir${_RESET}"
 }
