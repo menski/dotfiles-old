@@ -34,6 +34,11 @@ hi DiffDelete     cterm=none      ctermfg=black       ctermbg=red
 hi DiffText       cterm=none      ctermfg=black       ctermbg=blue
 hi IncSearch      cterm=none      ctermfg=black        ctermbg=yellow
 
+" Spellchecking
+hi SpellBad       cterm=underline ctermfg=red         ctermbg=none
+hi SpellCap       cterm=underline ctermfg=blue        ctermbg=none
+hi SpellLocal     cterm=none      ctermfg=none        ctermbg=none
+hi SpellRare      cterm=none      ctermfg=none        ctermbg=none
 
 
 " Cleared
@@ -62,10 +67,6 @@ hi PmenuThumb     cterm=none      ctermfg=none        ctermbg=none
 hi Question       cterm=none      ctermfg=none        ctermbg=none
 hi Search         cterm=none      ctermfg=none        ctermbg=none
 hi SpecialKey     cterm=none      ctermfg=none        ctermbg=none
-hi SpellBad       cterm=none      ctermfg=none        ctermbg=none
-hi SpellCap       cterm=none      ctermfg=none        ctermbg=none
-hi SpellLocal     cterm=none      ctermfg=none        ctermbg=none
-hi SpellRare      cterm=none      ctermfg=none        ctermbg=none
 hi TabLine        cterm=none      ctermfg=none        ctermbg=none
 hi TabLineFill    cterm=none      ctermfg=none        ctermbg=none
 hi TabLineSel     cterm=none      ctermfg=none        ctermbg=none
