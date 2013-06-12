@@ -1,8 +1,8 @@
 #!/bin/sh
 
 [[ -f ~/.Xresources ]] && xrdb -merge $HOME/.Xresources
-[[ -f ~/.Xmodmap ]] && xmodmap $HOME/.Xmodmap
- xrandr -q | grep "DP1 connected" && xrandr --output LVDS1 --off --output DP1 --auto
+
+xrandr -q | grep "DP1 connected" && xrandr --output LVDS1 --off --output DP1 --auto
 
 urxvtd -q -o -f
 
