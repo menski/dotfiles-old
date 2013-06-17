@@ -15,6 +15,7 @@ hi LineNr         cterm=none      ctermfg=darkcyan    ctermbg=none
 hi CursorLineNr   cterm=none      ctermfg=magenta     ctermbg=none
 hi ColorColumn    cterm=none      ctermfg=none        ctermbg=magenta
 hi Visual         cterm=reverse   ctermfg=cyan        ctermbg=black
+hi Underlined     cterm=underline ctermfg=none        ctermbg=none
 
 " Syntax
 hi Comment        cterm=none      ctermfg=darkcyan    ctermbg=none
@@ -40,9 +41,12 @@ hi SpellCap       cterm=underline ctermfg=blue        ctermbg=none
 hi SpellLocal     cterm=none      ctermfg=none        ctermbg=none
 hi SpellRare      cterm=none      ctermfg=none        ctermbg=none
 
+" Folding
+hi Folded         cterm=none      ctermfg=darkblue    ctermbg=none
+hi FoldColumn     cterm=none      ctermfg=none        ctermbg=none
+
 
 " Cleared
-hi Underlined     cterm=none      ctermfg=none        ctermbg=none
 hi Ignore         cterm=none      ctermfg=none        ctermbg=none
 hi MatchParen     cterm=none      ctermfg=none        ctermbg=none
 hi Conceal        cterm=none      ctermfg=none        ctermbg=none
@@ -52,8 +56,6 @@ hi CursorColumn   cterm=none      ctermfg=none        ctermbg=none
 hi CursorLine     cterm=none      ctermfg=none        ctermbg=none
 hi Directory      cterm=none      ctermfg=none        ctermbg=none
 hi ErrorMsg       cterm=none      ctermfg=none        ctermbg=none
-hi Folded         cterm=none      ctermfg=none        ctermbg=none
-hi FoldColumn     cterm=none      ctermfg=none        ctermbg=none
 hi SignColumn     cterm=none      ctermfg=none        ctermbg=none
 hi MatchParen     cterm=none      ctermfg=none        ctermbg=none
 hi ModeMsg        cterm=none      ctermfg=none        ctermbg=none
