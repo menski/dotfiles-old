@@ -42,6 +42,11 @@ set expandtab
 " Search related settings
 set incsearch
 set hlsearch
+set ignorecase
+
+" Wildmenu settings
+set wildmenu
+set wildmode=longest:full
 
 " Map Ctrl+l to clear highlighted searches
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
@@ -95,3 +100,10 @@ let g:pymode_lint_write = 0
 
 nmap <C-S-P> :HLT<CR>
 nmap <F12> :colorscheme invader<CR>
+
+" Riv settings
+let g:riv_global_leader=","
+let g:riv_web_browser="chromium"
+let g:riv_default_path="~/workspace/riv"
+let g:riv_fold_blank=1
+let g:riv_fold_auto_update=0
