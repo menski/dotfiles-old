@@ -33,13 +33,13 @@ if [ -n "$DISPLAY" ]; then
     alias srename='filebot --format "{n} - {s00e00} - {t}" -rename -non-strict'
     alias rwall='feh --bg-scale "$(find /home/menski/Dropbox/Apps/Desktoppr/ -type f | grep -v .dropbox | shuf -n1)"'
     alias cwall='for i in ~/Dropbox/Apps/Desktoppr/*; do feh --bg-scale $i; basename $i; read; done'
-    alias mnt='udevil mount'
-    alias umnt='udevil umount'
-    alias mnas='udevil mount -o sec=ntlmv2 smb://192.168.0.1/volume1'
-    alias unas='udevil umount smb://192.168.0.1/volume1'
 fi
 
 # shortcuts
+alias mnt='udevil mount'
+alias umnt='udevil umount'
+alias mnas='udevil mount -o sec=ntlmv2 smb://192.168.0.1/volume1'
+alias unas='udevil umount smb://192.168.0.1/volume1'
 alias psgrep='ps aux | grep -v grep | grep -i'
 alias myps='ps ux -umenski'
 alias e='vim'
