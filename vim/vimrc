@@ -104,6 +104,6 @@ nmap <F12> :colorscheme invader<CR>
 " Riv settings
 let g:riv_global_leader=","
 let g:riv_web_browser="chromium"
-let g:riv_default_path="~/workspace/riv"
+let g:riv_default_path="~/projects/riv"
 let g:riv_fold_blank=1
 let g:riv_fold_auto_update=0
