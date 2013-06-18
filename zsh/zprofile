@@ -7,7 +7,7 @@ function add_path {
 add_path $HOME/.local/bin
 
 # keychain startup
-eval $(keychain --nogui -Q --quiet id_rsa)
+eval $(keychain --nogui -Q --quiet id_rsa gitlab)
 [ -z "$HOSTNAME" ] && HOSTNAME=$(uname -n)
 [ -f $HOME/.keychain/${HOSTNAME}-sh ] && source $HOME/.keychain/${HOSTNAME}-sh
 [ -f $HOME/.keychain/${HOSTNAME}-sh-gpg ] && source $HOME/.keychain/${HOSTNAME}-sh-gpg
