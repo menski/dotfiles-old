@@ -38,9 +38,9 @@ fi
 # shortcuts
 alias mnt='udevil mount'
 alias umnt='udevil umount'
-alias mnas='udevil mount -o sec=ntlmv2 smb://192.168.0.1/volume1 /media/nas'
+alias mnas='udevil mount -o user=admin,sec=ntlmv2 smb://192.168.0.1/volume1 /media/nas'
 alias unas='udevil umount smb://192.168.0.1/volume1'
-alias mbackup='udevil mount -o sec=ntlmv2 smb://192.168.0.1/volume9 /media/backup'
+alias mbackup='udevil mount -o  user=admin,sec=ntlmv2 smb://192.168.0.1/volume9 /media/backup'
 alias ubackup='udevil umount smb://192.168.0.1/volume9'
 alias psgrep='ps aux | grep -v grep | grep -i'
 alias myps='ps ux -umenski'
