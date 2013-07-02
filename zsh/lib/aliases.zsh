@@ -42,6 +42,8 @@ alias mnas='udevil mount -o user=admin,sec=ntlmv2 smb://192.168.0.1/volume1 /med
 alias unas='udevil umount smb://192.168.0.1/volume1'
 alias mbackup='udevil mount -o  user=admin,sec=ntlmv2 smb://192.168.0.1/volume9 /media/backup'
 alias ubackup='udevil umount smb://192.168.0.1/volume9'
+alias mbooks='udevil mount ssh://192.168.0.111:/media/books /media/books'
+alias ubooks='udevil umount ssh://192.168.0.111:/media/books'
 alias psgrep='ps aux | grep -v grep | grep -i'
 alias myps='ps ux -umenski'
 alias e='vim'
