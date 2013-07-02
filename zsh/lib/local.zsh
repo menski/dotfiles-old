@@ -22,12 +22,12 @@ function take {
 function whereami {
   local apifile="$HOME/.ipinfodb"
   if [ -f $apifile ]; then
-    curl -s "http://api.ipinfodb.com/v3/ip-city/?format=raw&key=$(cat $apifile)" | awk -F\; '
-      function cap(n) { return toupper(substr(n,1,1)) tolower(substr(n,2)) }
+    curl -s --connect-timeout 1 --retry 5 "http://api.ipinfodb.com/v3/ip-city/?format=raw&key=$(cat $apifile)" | awk -F\; '
       $1=="OK" {
-        printf "IP: %s\nCountry: %s (%s)\nCity: %s (%s)\nPosition: %s %s\n", $3, cap($5), $4, cap($7), cap($6), $9, $10
+        $0 = tolower($0)
+        printf "IP: %s\nCountry: %s (%s)\nCity: %s (%s)\nPosition: %s %s\n", $3, $5, toupper($4), $7, $6, $9, $10
       }
-    '
+    ' | sed 's/\<./\u&/g'
   else
     echo "Unable to find $apifile. Please enter your api key:"
     local apikey
