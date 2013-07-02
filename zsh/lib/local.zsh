@@ -20,8 +20,28 @@ function take {
 }
 
 function whereami {
-    EIP=$(curl -s http://ipecho.net/plain)
-    curl -s http://freegeoip.net/csv/$EIP | awk -F\" '{printf "%s %s, %s\n", $2, $12, $6}'
+  local apifile="$HOME/.ipinfodb"
+  if [ -f $apifile ]; then
+    curl -s "http://api.ipinfodb.com/v3/ip-city/?format=raw&key=$(cat $apifile)" | awk -F\; '
+      function cap(n) { return toupper(substr(n,1,1)) tolower(substr(n,2)) }
+      $1=="OK" {
+        printf "IP: %s\nCountry: %s (%s)\nCity: %s (%s)\nPosition: %s %s\n", $3, cap($5), $4, cap($7), cap($6), $9, $10
+      }
+    '
+  else
+    echo "Unable to find $apifile. Please enter your api key:"
+    local apikey
+    read apikey
+    if [ -n "$apikey" ]; then
+      echo $apikey > $apifile
+      chmod 600 $apifile
+      whereami
+    else
+      echo "Please create $apifile to proceed"
+      echo "  echo 'API-KEY' > $apifile && chmod 600 $apifile"
+      return 1
+    fi
+  fi
 }
 
 function git_info {
