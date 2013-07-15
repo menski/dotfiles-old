@@ -22,10 +22,13 @@ function take {
 function whereami {
   local apifile="$HOME/.ipinfodb"
   if [ -f $apifile ]; then
-    curl -s --connect-timeout 1 --retry 5 "http://api.ipinfodb.com/v3/ip-city/?format=raw&key=$(cat $apifile)" | awk -F\; '
+    curl -s --connect-timeout 1 --retry 5 "http://api.ipinfodb.com/v3/ip-city/?format=raw&key=$(cat $apifile)" | awk -F\; -v map=$1 '
       $1=="OK" {
         $0 = tolower($0)
         printf "IP: %s\nCountry: %s (%s)\nCity: %s (%s)\nPosition: %s %s\n", $3, $5, toupper($4), $7, $6, $9, $10
+        if (map) {
+          system(sprintf("xdg-open \"http://maps.googleapis.com/maps/api/staticmap?center=%1$s,%2$s&zoom=7&size=600x600&maptype=hybrid&sensor=false&markers=size:mid%7Ccolor:red%7C%1$s,%2$s\" > /dev/null", $9, $10))
+        }
       }
     ' | sed 's/\<./\u&/g'
   else
